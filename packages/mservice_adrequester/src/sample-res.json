@@ -1,0 +1,119 @@
+{
+    "version": 1,
+    "adBreaks": [
+        {
+            "id": "4TH07N3G-P0G8-NA88-V16Q-99ID3Z2FXJAD_H9ZD4VM39B8R2OPK1Z3ELYDF_7",
+            "type": "linear",
+            "adSource": "4TH07N3G-P0G8-NA88-V16Q-99ID3Z2FXJAD_H9ZD4VM39B8R2OPK1Z3ELYDF_7_1"
+        }
+    ],
+    "vastAdSources": {
+        "4TH07N3G-P0G8-NA88-V16Q-99ID3Z2FXJAD_H9ZD4VM39B8R2OPK1Z3ELYDF_7_1": {
+            "version": 3,
+            "ads": [
+                {
+                    "id": "24963676.100001347724233",
+                    "sequence": 1,
+                    "price": 7.4,
+                    "error": "http://errorsozad.link",
+                    "type": "inline",
+                    "title": "adtitlev1o15",
+                    "system": "FreeWheel",
+                    "extensions": [],
+                    "impressions": [
+                        "http://ste-test-freewheel-fake-api:8080/v1/event?cn=defaultImpression&level=inline&salt=8rkwd52siv&mode=&pluto_deviceMake=&pluto_deviceModel=&pluto_deviceId="
+                    ],
+                    "creatives": [
+                        {
+                            "id": "30064460",
+                            "duration": 15
+                        }
+                    ],
+                    "mediaFiles": {
+                        "30064460": [
+                            {
+                                "bitrate": 720,
+                                "inPoint": 0,
+                                "outPoint": 15,
+                                "url": "http://s1.fwmrm.net/m/1/520311/81/34036817/180221945/1018x674_BOXYCorona_ad-Ad01_1647270757.png",
+                                "height": 674,
+                                "width": 1018,
+                                "type": "image/png",
+                                "duration": 15
+                            }
+                        ]
+                    },
+                    "trackingEvents": {
+                        "30064460": {
+                            "start": [
+                                "http://ste-test-freewheel-fake-api:8080/v1/event?cn=start&salt=3d8ao2bzz3&mode=&pluto_deviceMake=&pluto_deviceModel=&pluto_deviceId="
+                            ],
+                            "firstQuartile": [
+                                "http://ste-test-freewheel-fake-api:8080/v1/event?cn=firstQuartile&salt=ja2utxk22f&mode=&pluto_deviceMake=&pluto_deviceModel=&pluto_deviceId="
+                            ],
+                            "midpoint": [
+                                "http://ste-test-freewheel-fake-api:8080/v1/event?cn=midpoint&salt=l7idptf1w7&mode=&pluto_deviceMake=&pluto_deviceModel=&pluto_deviceId="
+                            ],
+                            "thirdQuartile": [
+                                "http://ste-test-freewheel-fake-api:8080/v1/event?cn=thirdQuartile&salt=zi8dsk65fo&mode=&pluto_deviceMake=&pluto_deviceModel=&pluto_deviceId="
+                            ],
+                            "complete": [
+                                "http://ste-test-freewheel-fake-api:8080/v1/event?cn=complete&salt=up2a5qe714&mode=&pluto_deviceMake=&pluto_deviceModel=&pluto_deviceId="
+                            ],
+                            "mute": [
+                                "http://ste-test-freewheel-fake-api:8080/v1/event?cn=mute&salt=5408f2fhdm&mode=&pluto_deviceMake=&pluto_deviceModel=&pluto_deviceId="
+                            ],
+                            "unmute": [
+                                "http://ste-test-freewheel-fake-api:8080/v1/event?cn=unmute&salt=6gxwyp38x8&mode=&pluto_deviceMake=&pluto_deviceModel=&pluto_deviceId="
+                            ],
+                            "rewind": [
+                                "http://ste-test-freewheel-fake-api:8080/v1/event?cn=rewind&salt=4ewl9b9887&mode=&pluto_deviceMake=&pluto_deviceModel=&pluto_deviceId="
+                            ],
+                            "pause": [
+                                "http://ste-test-freewheel-fake-api:8080/v1/event?cn=pause&salt=89nzlhvgq3&mode=&pluto_deviceMake=&pluto_deviceModel=&pluto_deviceId="
+                            ],
+                            "resume": [
+                                "http://ste-test-freewheel-fake-api:8080/v1/event?cn=resume&salt=kbbyjd7jvx&mode=&pluto_deviceMake=&pluto_deviceModel=&pluto_deviceId="
+                            ],
+                            "fullscreen": [
+                                "http://ste-test-freewheel-fake-api:8080/v1/event?cn=fullscreen&salt=48nh5640eq&mode=&pluto_deviceMake=&pluto_deviceModel=&pluto_deviceId="
+                            ]
+                        }
+                    },
+                    "verifications": [
+                        {
+                            "vendorKey": "vendor_omsdk",
+                            "javascriptResourceUrl": "https://s3-us-west-2.amazonaws.com/content.iabtechlab.com/omid-validation-verification-logapi.js",
+                            "verificationParameters": "param_custom=value_custom"
+                        }
+                    ],
+                    "videoClicks": {
+                        "30064460": {
+                            "clickTracking": [
+                                {
+                                    "id": "FWc_27527224.0",
+                                    "url": "http://clicktracking.link"
+                                }
+                            ],
+                            "clickThrough": {
+                                "id": "FWc_31604305.0.3",
+                                "url": "http://clickthrough.link"
+                            }
+                        }
+                    },
+                    "icons": {}
+                }
+            ]
+        }
+    },
+    "trackingEvents": {
+        "4TH07N3G-P0G8-NA88-V16Q-99ID3Z2FXJAD_H9ZD4VM39B8R2OPK1Z3ELYDF_7_1": {
+            "breakStart": [
+                "http://ste-test-freewheel-fake-api:8080/v1/event?cn=breakStart&salt=r8dwggp00g&mode=&pluto_deviceMake=&pluto_deviceModel=&pluto_deviceId="
+            ],
+            "breakEnd": [
+                "http://ste-test-freewheel-fake-api:8080/v1/event?cn=breakEnd&salt=e7s7fful7u&mode=&pluto_deviceMake=&pluto_deviceModel=&pluto_deviceId="
+            ]
+        }
+    }
+}
