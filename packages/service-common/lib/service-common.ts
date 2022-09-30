@@ -1,22 +1,16 @@
 import { JSONValue, MessagingService } from 'enterprise_service_bus';
-import { Subject, StartToken, InvokeToken } from 'metrics';
 
 async function init(serverUrl: string, name: string): Promise<void> {
     await MessagingService.init(serverUrl, name);
-    const startToken: StartToken = { name, ts: Date.now() };
-    return MessagingService.publish(Subject.Start, startToken);
+    return MessagingService.publish('METRICS_START', { name, ts: Date.now() });
 }
 
-async function request<Res extends JSONValue, Req extends JSONValue>(
-    subject: string,
-    req: Req
-): Promise<Res> {
-    const res = (await MessagingService.request(subject, req)) as Res;
-    const invokeToken: InvokeToken = {
+async function request(subject: string, req: JSONValue): Promise<JSONValue> {
+    const res = await MessagingService.request(subject, req);
+    await MessagingService.publish('METRICS_INVOKE', {
         from: MessagingService.clientServiceName,
         subject
-    };
-    await MessagingService.publish(Subject.Invoke, invokeToken);
+    });
     return res;
 }
 
@@ -75,4 +69,8 @@ async function receive(subject: string, impl: AsyncJSONAction): Promise<void> {
     );
 }
 
-export { JSONValue, init, request, set, close, receive };
+async function send(subject: string, msg: JSONValue): Promise<void> {
+    return MessagingService.publish(subject, msg);
+}
+
+export { JSONValue, init, request, set, close, receive, send };

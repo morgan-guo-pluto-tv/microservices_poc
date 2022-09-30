@@ -1,6 +1,6 @@
 import 'dotenv/config';
 import { init, set, close, request } from 'service-common';
-import { Request, Response } from '../../src';
+import { Response } from '../../src';
 import { RequestSubject } from '../../src/enums/enums';
 import {
     serviceName,
@@ -15,10 +15,10 @@ describe('test stub for app', () => {
 
     afterAll(close);
     test('basic message interactions', async () => {
-        const res = await request<Response, Request>(
+        const res = (await request(
             RequestSubject.ComposeBeacon,
             'test'
-        );
+        )) as Response;
         expect(res).toBeDefined();
         expect(Array.isArray(res)).toBe(true);
     }, 10000);

@@ -1,21 +1,6 @@
 import 'dotenv/config';
 import express from 'express';
-import { init, request } from 'service-common';
-import {
-    RequestSubject as AdRequesterSubject,
-    Request as AdRequesterRequest,
-    Response as AdRequesterResponse
-} from 'service_adrequester';
-import {
-    RequestSubject as FwUrlSubject,
-    Request as FwUrlRequest,
-    Response as FwUrlResponse
-} from 'service_fwurlbuilder';
-import {
-    RequestSubject as BeaconBuilderSubject,
-    Request as BeaconBuilderRequest,
-    Response as BeaconBuilderResponse
-} from 'service_beaconbuilder';
+import { init, JSONValue, request } from 'service-common';
 
 const SERVICE_NAME = 'Pause Ad';
 
@@ -26,28 +11,19 @@ const SERVICE_NAME = 'Pause Ad';
 
     app.get('/image', async (req, res) => {
         // Getting the Fw URL
-        const fwUrlResponse = await request<FwUrlResponse, FwUrlRequest>(
-            FwUrlSubject.ComposeFreewheelURL,
-            { params: [1, 2, 3] }
-        );
+        const { fwURl } = (await request('COMPOSE_FW_URL', {
+            params: [1, 2, 3]
+        })) as { fwURl: string };
 
         // Getting Ads
-        const adRequesterResponse = await request<
-            AdRequesterResponse,
-            AdRequesterRequest
-        >(AdRequesterSubject.GetAds, fwUrlResponse.fwURl);
+        const { ads } = (await request('GET_ADS', fwURl)) as {
+            ads: JSONValue[];
+        };
 
         // Getting beacons for each ad in the list
-        const beacons = await Promise.all(
-            adRequesterResponse.ads.map((ad) =>
-                request<BeaconBuilderResponse, BeaconBuilderRequest>(
-                    BeaconBuilderSubject.ComposeBeacon,
-                    ad
-                )
-            )
+        res.send(
+            await Promise.all(ads.map((ad) => request('COMPOSE_BEACON', ad)))
         );
-
-        res.send(beacons);
     });
 
     const port = 3000;

@@ -37,7 +37,6 @@
         "typescript": "^4.7.4"
     },
     "dependencies": {
-        "enterprise_service_bus": "^0.0.0",
-        "metrics": "^0.0.0"
+        "enterprise_service_bus": "^0.0.0"
     }
 }

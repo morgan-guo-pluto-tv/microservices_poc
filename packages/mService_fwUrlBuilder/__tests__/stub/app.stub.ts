@@ -1,6 +1,6 @@
 import 'dotenv/config';
 import { init, set, close, request } from 'service-common';
-import { Request, Response } from '../../src';
+import { Response } from '../../src';
 import { RequestSubject } from '../../src/enums/enums';
 import {
     serviceName,
@@ -15,10 +15,9 @@ describe('test stub for app', () => {
 
     afterAll(close);
     test('basic message interactions', async () => {
-        const res = await request<Response, Request>(
-            RequestSubject.ComposeFreewheelURL,
-            { params: [1, 2, 3] }
-        );
+        const res = (await request(RequestSubject.ComposeFreewheelURL, {
+            params: [1, 2, 3]
+        })) as Response;
         expect(res).toBeDefined();
         expect(res.fwURl).toBeDefined();
         expect(typeof res.fwURl).toBe('string');

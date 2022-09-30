@@ -1,5 +1,5 @@
 import { init, set, close, request } from 'service-common';
-import { Request, Response } from '../../src';
+import { Response } from '../../src';
 import { RequestSubject } from '../../src/enums/enums';
 import {
     serviceName,
@@ -15,10 +15,7 @@ describe('test stub for app', () => {
 
     afterAll(close);
     test('basic message interactions', async () => {
-        const res = await request<Response, Request>(
-            RequestSubject.GetAds,
-            'test'
-        );
+        const res = (await request(RequestSubject.GetAds, 'test')) as Response;
         expect(res).toBeDefined();
         expect(res.ads).toBeDefined();
         expect(res.ads.length <= 20).toBe(true);
