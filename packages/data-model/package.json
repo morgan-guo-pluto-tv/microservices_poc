@@ -1,0 +1,32 @@
+{
+  "name": "data-model",
+  "version": "0.0.0",
+  "description": "> TODO: description",
+  "author": "Morgan Guo <morgan.guo@pluto.tv>",
+  "homepage": "https://github.com/morgan-guo-pluto-tv/microservices_poc#readme",
+  "license": "ISC",
+  "types": "build/index.d.ts",
+  "directories": {
+    "lib": "src"
+  },
+  "files": [
+    "src"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/morgan-guo-pluto-tv/microservices_poc.git"
+  },
+  "scripts": {
+    "build": "npx tsc --declaration",
+    "lint": "eslint . --fix"
+  },
+  "bugs": {
+    "url": "https://github.com/morgan-guo-pluto-tv/microservices_poc/issues"
+  },
+  "dependencies": {
+    "service_adrequester": "^1.0.0",
+    "service_beaconbuilder": "^1.0.0",
+    "service_fwurlbuilder": "^1.0.0",
+    "service_pause_ad": "^1.0.0"
+  }
+}
