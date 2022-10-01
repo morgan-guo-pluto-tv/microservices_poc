@@ -1,0 +1,9 @@
+{
+  "name": "ts-config-pluto-tv",
+  "version": "0.0.0",
+  "license": "ISC",
+  "main": "tsconfig.json",
+  "peerDependencies": {
+    "typescript": "^4.8.3"
+  }
+}

@@ -17,7 +17,7 @@
         "url": "git+https://github.com/morgan-guo-pluto-tv/microservices_poc.git"
     },
     "scripts": {
-        "build": "npx tsc --declaration",
+        "build": "npx tsc --declaration --outDir build",
         "lint": "eslint . --fix"
     },
     "bugs": {
@@ -31,7 +31,8 @@
     },
     "devDependencies": {
         "eslint-config-pluto-tv": "^0.0.0",
-        "prettier-config-pluto-tv": "^0.0.0"
+        "prettier-config-pluto-tv": "^0.0.0",
+        "ts-config-pluto-tv": "^0.0.0"
     },
     "eslintConfig": {
         "extends": "pluto-tv"

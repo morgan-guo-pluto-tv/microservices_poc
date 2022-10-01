@@ -20,7 +20,7 @@
     },
     "scripts": {
         "test": "node ./__tests__/service-common.test.js",
-        "build": "npx tsc --declaration",
+        "build": "npx tsc --declaration --outDir build",
         "lint": "eslint . --fix"
     },
     "bugs": {
@@ -38,6 +38,7 @@
         "eslint": "^8.17.0",
         "eslint-config-pluto-tv": "^0.0.0",
         "prettier-config-pluto-tv": "^0.0.0",
+        "ts-config-pluto-tv": "^0.0.0",
         "ts-node": "^10.8.1",
         "typescript": "^4.7.4"
     },
