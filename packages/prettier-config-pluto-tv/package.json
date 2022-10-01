@@ -1,0 +1,9 @@
+{
+    "name": "prettier-config-pluto-tv",
+    "version": "0.0.0",
+    "license": "ISC",
+    "main": ".prettierrc.json",
+    "peerDependencies": {
+        "prettier": "^2.7.1"
+    }
+}

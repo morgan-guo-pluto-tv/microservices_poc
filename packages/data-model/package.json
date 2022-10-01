@@ -23,9 +23,6 @@
     "bugs": {
         "url": "https://github.com/morgan-guo-pluto-tv/microservices_poc/issues"
     },
-    "eslintConfig": {
-        "extends": "pluto-tv"
-    },
     "dependencies": {
         "service_adrequester": "^1.0.0",
         "service_beaconbuilder": "^1.0.0",
@@ -33,6 +30,11 @@
         "service_pause_ad": "^1.0.0"
     },
     "devDependencies": {
-        "eslint-config-pluto-tv": "^0.0.0"
-    }
+        "eslint-config-pluto-tv": "^0.0.0",
+        "prettier-config-pluto-tv": "^0.0.0"
+    },
+    "eslintConfig": {
+        "extends": "pluto-tv"
+    },
+    "prettier": "prettier-config-pluto-tv"
 }
